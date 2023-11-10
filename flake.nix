@@ -14,7 +14,7 @@
     nixosConfigurations.a17nix = nixpkgs.lib.nixosSystem {
       modules = [ 
 #           nixos-hardware.nixosModules.asus-rog-strix-g513im
-#           nixos-hardware.nixosModules.asus-tuf-tuf17fa707xv
+           nixos-hardware.nixosModules.asus-tuf-tuf17fa707xv
             nixos-hardware.nixosModules.common-hidpi
             nixos-hardware.nixosModules.common-gpu-amd
             nixos-hardware.nixosModules.common-cpu-amd-pstate
