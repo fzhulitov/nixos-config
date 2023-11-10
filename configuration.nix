@@ -42,7 +42,7 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.pkgs.linuxPackages_6_5;
 
   nix = {
 #   accept-flake-config = true;
@@ -83,10 +83,18 @@ in
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [
+  "nvidia"
+  "amdgpu"
+  ];
+  hardware.opengl.enable = true;
+  hardware.nvidia.modesetting.enable = true;
+#  hardware.nvidia.prime.sync.enable = true; # this or offload
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+
 
   # Configure keymap in X11
   services.xserver = {

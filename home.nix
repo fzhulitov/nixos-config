@@ -35,10 +35,19 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+  pkgs.vulkan-tools
+  pkgs.glxinfo
+pkgs.hibernate
+pkgs.telegram-desktop
+pkgs.whatsapp-for-linux
+
+pkgs.gittyup
   pkgs.git-cola
   pkgs.gitkraken
   pkgs.gitqlient
   pkgs.smartgithg
+
+
   pkgs.glib# for cpupowergui
 #  pkgs.github-desktop
   pkgs.asusctl
