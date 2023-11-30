@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+  # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -13,7 +13,6 @@ in
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-#      ./personal.nix
     ];
 
 
@@ -31,13 +30,17 @@ in
 #      b612
     ];
   };
+
+  nix.settings.trusted-users = [ "root" "fedor" ];
+
+  services.power-profiles-daemon.enable = false;
+  services.tlp.enable = true;
   powerManagement = {
     enable = true;
     cpuFreqGovernor = "ondemand";
     powertop.enable = true;
 
   };
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -92,7 +95,11 @@ in
 #  hardware.nvidia.prime.sync.enable = true; # this or offload
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm = {
+      enable = true;
+#      wayland.enable = true;
+#      theme = "where_is_my_sddm_theme";
+      };
   services.xserver.desktopManager.plasma5.enable = true;
 
 
@@ -112,7 +119,7 @@ in
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    alsa.support32Bit = true;
+#    alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
@@ -155,7 +162,7 @@ in
   linuxKernel.packages.linux_latest_libre.cpupower
   linuxKernel.packages.linux_latest_libre.zenpower
   linuxKernel.packages.linux_latest_libre.asus-wmi-sensors
-  tlp
+#  tlp
   upower
   qt6Packages.kcoreaddons
   ];

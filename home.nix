@@ -35,6 +35,27 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+  pkgs.helix
+  pkgs.haskell-language-server
+  pkgs.nil
+  pkgs.python311Packages.python-lsp-server
+  pkgs.cabal-install
+  pkgs.cabal2nix
+  pkgs.ghc
+#  pkgs.haskellPackages.stack
+#  pkgs.haskellPackages.threadscope
+  pkgs.gnatcoll-zlib
+  pkgs.zlib
+#  pkgs.haskellPackages.stack-wrapper
+#  pkgs.haskellPackages.stack2cabal
+#  pkgs.haskellPackages.stack2nix
+#  pkgs.stack2nix
+  pkgs.stack
+
+
+pkgs.tor-browser-bundle-bin
+pkgs.obfs4
+
   pkgs.vulkan-tools
   pkgs.glxinfo
 pkgs.hibernate
@@ -43,14 +64,14 @@ pkgs.whatsapp-for-linux
 
 pkgs.gittyup
   pkgs.git-cola
-  pkgs.gitkraken
-  pkgs.gitqlient
+ pkgs.gitqlient
   pkgs.smartgithg
 
 
   pkgs.glib# for cpupowergui
 #  pkgs.github-desktop
   pkgs.asusctl
+  pkgs.powertop
   pkgs.linuxKernel.packages.linux_latest_libre.asus-wmi-sensors
   pkgs.supergfxctl
     pkgs.libreoffice

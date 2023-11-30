@@ -13,18 +13,8 @@
   outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
     nixosConfigurations.a17nix = nixpkgs.lib.nixosSystem {
       modules = [ 
-#           nixos-hardware.nixosModules.asus-rog-strix-g513im
            nixos-hardware.nixosModules.asus-tuf-17fa707xv
-            nixos-hardware.nixosModules.common-hidpi
-            nixos-hardware.nixosModules.common-gpu-amd
-            nixos-hardware.nixosModules.common-cpu-amd-pstate
-            nixos-hardware.nixosModules.common-cpu-amd-raphael-igpu
-            nixos-hardware.nixosModules.common-pc-ssd
-            nixos-hardware.nixosModules.common-pc-laptop
-            nixos-hardware.nixosModules.common-gpu-nvidia
-#            nixos-hardware.nixosModules.common-gpu-intel
-./add-nvidia.nix
-./configuration.nix
+           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
